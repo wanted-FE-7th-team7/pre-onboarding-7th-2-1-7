@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Tag } from './components/UI/Tag';
+import { Button } from './components/UI/Button';
 import GlobalStyles from './styles/GlobalStyles';
 
 function App() {
@@ -8,14 +8,14 @@ function App() {
     <>
       <GlobalStyles />
       <S.Div>
-        <Tag label="1" />
-        <Tag label="1" />
-        <Tag label="1" />
-        <Tag label="1" />
-        <Tag label="1" color="secondary" />
-        <Tag label="1" color="secondary" />
-        <Tag label="1" color="secondary" />
-        <Tag label="1" color="secondary" />
+        <Button label="1" />
+        <Button label="1" />
+        <Button label="1" />
+        <Button label="1" />
+        <Button label="1" color="secondary" />
+        <Button label="1" color="secondary" />
+        <Button label="1" color="secondary" />
+        <Button label="1" color="secondary" />
       </S.Div>
     </>
   );

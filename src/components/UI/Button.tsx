@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import { color, fontColor } from '../../styles/theme';
 
 type Props = {
-  color: 'primary' | 'secondary';
+  color: 'primary' | 'secondary' | 'tertiary';
+  size: 'xs' | 'sm' | 'base' | 'md' | 'lg';
   label: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export function Tag({
+export function Button({
   color = 'primary',
   label = '',
   onClick,
