@@ -27,14 +27,14 @@ const S = {
     cursor: pointer;
     background-color: ${props => color[props.color]};
     color: ${props => fontColor[props.color]};
-    width: 62px;
-    height: 27px;
-    padding: 5px, 18px, 5px, 18px;
-    border-radius: 62px;
+    width: 6.2rem;
+    height: 2.7rem;
+    padding: 0.5rem, 1.8rem, 0.5rem, 1.8rem;
+    border-radius: 6.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 1.4rem;
   `,
 };

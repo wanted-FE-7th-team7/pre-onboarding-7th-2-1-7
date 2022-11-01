@@ -8,14 +8,14 @@ function App() {
     <>
       <GlobalStyles />
       <S.Div>
-        <Tag label="hello" />
-        <Tag label="hello" />
-        <Tag label="hello" />
-        <Tag label="hello" />
-        <Tag label="hello" color="secondary" />
-        <Tag label="hello" color="secondary" />
-        <Tag label="hello" color="secondary" />
-        <Tag label="hello" color="secondary" />
+        <Tag label="1" />
+        <Tag label="1" />
+        <Tag label="1" />
+        <Tag label="1" />
+        <Tag label="1" color="secondary" />
+        <Tag label="1" color="secondary" />
+        <Tag label="1" color="secondary" />
+        <Tag label="1" color="secondary" />
       </S.Div>
     </>
   );
