@@ -17,7 +17,7 @@ export default function Category({ category }: Props) {
 
 const S = {
   Category: styled.div`
-    width: 39rem;
+    width: 100%;
     height: 4rem;
     display: flex;
     align-items: center;

@@ -37,7 +37,7 @@ export default function CarCard({
 
 const S = {
   CardWrapper: styled.div`
-    width: 39rem;
+    width: 100%;
     height: 12rem;
     border-bottom: 1px solid black;
   `,
