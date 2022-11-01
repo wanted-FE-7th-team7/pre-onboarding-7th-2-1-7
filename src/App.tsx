@@ -1,7 +1,16 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import ItemTag from './components/UI/ItemTag';
+import GlobalStyles from './styles/GlobalStyles';
+import { theme } from './styles/theme';
 
 function App() {
-  return <div className="App">여기에 앱을 작성해주세요.</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <ItemTag />
+    </ThemeProvider>
+  );
 }
 
 export default App;
