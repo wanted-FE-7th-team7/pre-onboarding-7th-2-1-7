@@ -22,7 +22,7 @@ const S = {
     display: flex;
     align-items: center;
     gap: 1rem;
-
+    overflow: scroll;
     border-bottom: 1px solid black;
   `,
 };

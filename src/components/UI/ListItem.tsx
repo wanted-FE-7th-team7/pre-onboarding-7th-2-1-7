@@ -6,24 +6,26 @@ interface Props {
 export default function ListItem({ name, description }: Props) {
   return (
     <S.Item>
-      <S.Text>{name}</S.Text>
-      <S.Text>{description}</S.Text>
+      <S.Bold>{name}</S.Bold>
+      <S.Plain>{description}</S.Plain>
     </S.Item>
   );
 }
 
 const S = {
   Item: styled.div`
-    width: 100%;
     height: 4.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding: 0 2rem;
   `,
-  Text: styled.span`
+  Bold: styled.span`
     font-size: 1.7rem;
     font-weight: 700;
+  `,
+
+  Plain: styled.span`
+    font-size: 1.7rem;
   `,
 };

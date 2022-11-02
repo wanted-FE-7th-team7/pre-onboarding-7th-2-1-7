@@ -1,11 +1,10 @@
 import CarCard from '../components/UI/CarCard';
 import Category from '../components/UI/Category';
-
-const dummyCategory = ['전체', '대형', '중형', '소형', '전기'];
+import { CATEGORY } from '../constants';
 export default function ListPage() {
   return (
     <>
-      <Category category={dummyCategory} />
+      <Category category={CATEGORY} />
       <CarCard
         brand="adf"
         name="df"

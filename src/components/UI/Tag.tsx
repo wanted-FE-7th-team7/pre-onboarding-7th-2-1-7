@@ -20,6 +20,7 @@ const S = {
     font-weight: 700;
     border-radius: 3.1rem;
     color: black;
+    flex-shrink: 0;
     :hover {
       background-color: ${({ theme }) => theme.black};
       color: white;

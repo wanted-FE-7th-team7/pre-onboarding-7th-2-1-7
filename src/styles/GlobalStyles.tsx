@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 
 body {
   font-size: 10px;
+  box-sizing : border-box;
 }
 
 `;

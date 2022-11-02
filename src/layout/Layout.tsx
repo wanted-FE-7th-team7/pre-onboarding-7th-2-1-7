@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import HeaderBar from './HeaderBar';
 
 interface Props {
   children: JSX.Element;
@@ -7,7 +8,10 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <S.Wrapper>
-      <S.Layout>{children}</S.Layout>
+      <S.Layout>
+        <HeaderBar />
+        {children}
+      </S.Layout>
     </S.Wrapper>
   );
 }
@@ -20,6 +24,6 @@ const S = {
     justify-content: center;
   `,
   Layout: styled.div`
-    width: 500px;
+    width: 450px;
   `,
 };
