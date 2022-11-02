@@ -13,7 +13,7 @@ export const bgColor = {
 export const fontColor = {
   primary: '#FFFFFF',
   secondary: '#000000',
-  tertiary: '#000000',
+  tertiary: '#FFFFFF',
 };
 
 const theme = {

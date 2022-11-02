@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { color, fontColor } from '../../styles/theme';
 
 type Props = {
   color: 'primary' | 'secondary' | 'tertiary';
@@ -26,8 +25,8 @@ const S = {
   Button: styled.button<Pick<Props, 'color'>>`
     all: unset;
     cursor: pointer;
-    background-color: ${props => color[props.color]};
-    color: ${props => fontColor[props.color]};
+    background-color: ${({ theme, color }) => theme.bgColor[color]};
+    color: ${({ theme, color }) => theme.fontColor[color]};
     width: 6.2rem;
     height: 2.7rem;
     padding: 0.5rem, 1.8rem, 0.5rem, 1.8rem;

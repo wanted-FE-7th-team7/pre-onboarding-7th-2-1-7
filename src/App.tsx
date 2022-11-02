@@ -16,6 +16,10 @@ function App() {
         <Button label="1" color="secondary" />
         <Button label="1" color="secondary" />
         <Button label="1" color="secondary" />
+        <Button label="1" color="tertiary" />
+        <Button label="1" color="tertiary" />
+        <Button label="1" color="tertiary" />
+        <Button label="1" color="secondary" />
       </S.Div>
     </>
   );
