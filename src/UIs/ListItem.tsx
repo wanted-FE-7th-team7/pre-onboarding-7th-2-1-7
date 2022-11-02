@@ -3,11 +3,11 @@ import { theme } from '../styles/theme';
 import { StyledListHeader } from './ListHeader';
 
 interface Props {
-  name: string;
-  title: string;
+  name?: string;
+  title?: string;
 }
 
-function ListItem({ name, title }: Props) {
+function ListItem({ name = '', title = '' }: Props) {
   return (
     <StyledItem>
       <span>{name}</span>
