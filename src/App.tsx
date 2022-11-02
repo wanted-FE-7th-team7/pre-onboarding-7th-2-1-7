@@ -1,7 +1,34 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DetailPage from './pages/DetailPage';
+import ListPage from './pages/ListPage';
+import Layout from './styles/Layout';
 
 function App() {
-  return <div className="App">여기에 앱을 작성해주세요.</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/cars" />} />
+        <Route
+          path="/cars"
+          element={
+            <Layout>
+              <ListPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/cars/:id"
+          element={
+            <Layout>
+              <DetailPage />
+            </Layout>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
