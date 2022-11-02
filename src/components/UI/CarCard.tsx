@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import { isNewCar } from '../../utils/validation';
 import { formatToWon } from '../../utils/format';
 
 interface Props {
-  id: number;
-  createdAt: string;
+  createdAt: Date;
   brand: string;
   name: string;
   segment: string;
@@ -14,7 +12,6 @@ interface Props {
   imageSrc: string;
 }
 export default function CarCard({
-  id,
   createdAt,
   brand,
   name,
@@ -23,14 +20,9 @@ export default function CarCard({
   amount,
   imageSrc,
 }: Props) {
-  const navigate = useNavigate();
-  const handleClick = (id: number) => {
-    navigate(`/${id}`);
-  };
-
   return (
-    <S.CardWrapper onClick={() => handleClick(id)}>
-      {isNewCar(new Date(createdAt)) ? <S.Notice>신규</S.Notice> : ''}
+    <S.CardWrapper>
+      {isNewCar(createdAt) ? <S.Notice>신규</S.Notice> : ''}
       <S.Card>
         <S.Info>
           <S.InfoBold>
