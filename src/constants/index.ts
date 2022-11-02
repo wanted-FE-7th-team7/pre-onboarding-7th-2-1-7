@@ -6,12 +6,21 @@ const SEGMENT_MEDIUM = 'D';
 const SEGMENT_LARGE = 'E';
 const SEGMENT_SUV = 'SUV';
 
-export const CATEGORY = [
-  FUEL_GASOLINE,
-  FUEL_HYBRID,
-  FUEL_ELECTRIC,
-  SEGMENT_SMALL,
-  SEGMENT_MEDIUM,
-  SEGMENT_LARGE,
-  SEGMENT_SUV,
-];
+export const ALL = 'ALL';
+
+type CategoryType = {
+  [index: string]: string;
+  ALL: string;
+  C: string;
+  D: string;
+  E: string;
+  SUV: string;
+};
+
+export const CATEGORY: CategoryType = {
+  ALL: '전체',
+  C: '소형',
+  D: '중형',
+  E: '대형',
+  SUV: 'SUV',
+};

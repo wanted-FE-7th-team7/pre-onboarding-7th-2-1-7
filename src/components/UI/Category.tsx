@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 import Tag from './Tag';
+import { CATEGORY } from '../../constants';
 
 interface Props {
-  category: string[];
+  selectedCategory: string;
+  onClick: (selectedCategory: string) => void;
 }
 
-export default function Category({ category }: Props) {
+export default function Category({ selectedCategory, onClick }: Props) {
   return (
     <S.Category>
-      {category.map(name => (
-        <Tag text={name} />
+      {Object.entries(CATEGORY).map(([value, text]) => (
+        <Tag
+          key={value}
+          value={value}
+          text={text}
+          clicked={value === selectedCategory}
+          onClick={onClick}
+        />
       ))}
     </S.Category>
   );
@@ -22,7 +30,7 @@ const S = {
     display: flex;
     align-items: center;
     gap: 1rem;
-    overflow: scroll;
+    overflow-x: scroll;
     border-bottom: 1px solid black;
   `,
 };

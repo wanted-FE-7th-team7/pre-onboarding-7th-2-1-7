@@ -4,8 +4,8 @@ export type Segment = 'C' | 'D' | 'E' | 'SUV';
 export interface Car {
   id: number;
   startDate: string;
-  createAt: string;
   attribute: {
+    createAt: string;
     brand: string;
     name: string;
     segment: string;
@@ -21,8 +21,4 @@ export interface Car {
     name: string;
     amount: number;
   }[];
-}
-
-export interface CarListResponse {
-  payload: Car[];
 }
