@@ -2,7 +2,7 @@ import React from 'react';
 import DetailPage from './pages/DetailPage';
 import ListPage from './pages/ListPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GlobalStyles from './styles/GlobalStyles';
+import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import Layout from './layout/Layout';
@@ -10,7 +10,7 @@ import Layout from './layout/Layout';
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyles />
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <div className="App">
           <Layout>
