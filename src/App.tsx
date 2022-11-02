@@ -1,7 +1,13 @@
-import React from 'react';
+import { MainRouter } from './components/MainRouter';
+import GlobalStyle from './styles/GlobalStyles';
 
 function App() {
-  return <div className="App">여기에 앱을 작성해주세요.</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <MainRouter />
+    </>
+  );
 }
 
 export default App;
