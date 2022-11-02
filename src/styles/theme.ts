@@ -1,23 +1,26 @@
-export const color = {
-  primary: '#000000',
-  secondary: '#D9D9D9',
-  tertiary: '#0094FF',
+const color = {
+  black: '#000000',
+  grey: '#D9D9D9',
+  blue: '#0094FF',
+  white: '#FFFFFF',
 };
 
-export const bgColor = {
-  primary: color.primary,
-  secondary: color.secondary,
-  tertiary: color.tertiary,
+const bgColor = {
+  primary: color.black,
+  secondary: color.grey,
+  tertiary: color.blue,
 };
 
-export const fontColor = {
-  primary: '#FFFFFF',
-  secondary: '#000000',
-  tertiary: '#FFFFFF',
+const fontColor = {
+  primary: color.white,
+  secondary: color.black,
+  tertiary: color.white,
 };
 
 const theme = {
   color,
+  bgColor,
+  fontColor,
 };
 
 export default theme;

@@ -27,10 +27,11 @@ const S = {
     cursor: pointer;
     background-color: ${({ theme, color }) => theme.bgColor[color]};
     color: ${({ theme, color }) => theme.fontColor[color]};
-    width: 6.2rem;
+    min-width: 6.2rem;
     height: 2.7rem;
-    padding: 0.5rem, 1.8rem, 0.5rem, 1.8rem;
+    padding: 0.5rem 1.8rem 0.5rem 1.8rem;
     border-radius: 6.2rem;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
