@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { isNewCar } from '../../utils/validation';
+import { formatToWon } from '../../utils/format';
 
 interface Props {
   id: number;
@@ -38,7 +39,7 @@ export default function CarCard({
             {name}
           </S.InfoBold>
           <S.InfoPlain>
-            {segment} / {fuelType} <br />월 {amount}원 부터
+            {segment} / {fuelType} <br />월 {formatToWon(amount)}원 부터
           </S.InfoPlain>
         </S.Info>
         <S.Img src={imageSrc} alt="image" />

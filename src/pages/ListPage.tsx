@@ -19,7 +19,7 @@ export default function ListPage() {
           ? {}
           : { segment: selectedCategory as Segment };
       const data = await getCars(params);
-      console.log(data);
+
       setCarList(data);
     };
     getCarList();
