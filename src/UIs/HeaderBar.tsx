@@ -16,7 +16,6 @@ const StyledHeaderBar = styled.div`
   border-bottom: 1px solid ${theme.black};
   font-weight: 700;
   font-size: 1.7rem;
-  /* line-height: 2.57rem; */
   height: 6rem;
   width: ${width.lg};
 `;

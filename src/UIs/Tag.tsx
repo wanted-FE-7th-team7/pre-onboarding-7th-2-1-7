@@ -25,5 +25,6 @@ export const StyledTag = styled.button<StyledProps>`
   color: ${({ isSelected }) => (isSelected ? '#ffffff' : '#000000')};
   font-size: 1.4rem;
   padding: 0.5rem 1.8rem;
+  margin: 0 0.4rem;
   border-radius: 62px;
 `;
