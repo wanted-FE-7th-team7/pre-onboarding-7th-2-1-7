@@ -39,7 +39,7 @@ export default function ListPage() {
         <CarCard
           key={car.id}
           id={car.id}
-          createAt={car.startDate}
+          createdAt={car.startDate}
           brand={car.attribute.brand}
           name={car.attribute.name}
           segment={CATEGORY[car.attribute.segment]}

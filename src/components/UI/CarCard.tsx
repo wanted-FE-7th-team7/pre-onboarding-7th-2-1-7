@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { isNewCar } from '../../utils/validation';
 
 interface Props {
   id: number;
-  createAt: string;
+  createdAt: string;
   brand: string;
   name: string;
   segment: string;
@@ -13,7 +14,7 @@ interface Props {
 }
 export default function CarCard({
   id,
-  createAt,
+  createdAt,
   brand,
   name,
   segment,
@@ -26,11 +27,9 @@ export default function CarCard({
     navigate(`/${id}`);
   };
 
-  console.log(createAt);
-
   return (
     <S.CardWrapper onClick={() => handleClick(id)}>
-      <S.Notice>신규</S.Notice>
+      {isNewCar(new Date(createdAt)) ? <S.Notice>신규</S.Notice> : ''}
       <S.Card>
         <S.Info>
           <S.InfoBold>
