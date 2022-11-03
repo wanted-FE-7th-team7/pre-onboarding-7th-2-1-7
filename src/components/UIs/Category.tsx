@@ -26,13 +26,13 @@ function Category({ selectedType, setSelectedType }: Props) {
 export default Category;
 
 const Wrapper = styled.div`
+  ${flex('left')}
   position: fixed;
   top: ${HEADER_HEIGHT};
-  background-color: #ffffff;
-  ${flex('left')}
   width: 100%;
   height: ${CATEGORY_HEIGHT};
   padding: 0.6rem;
+  background-color: #ffffff;
   border-bottom: 1px solid black;
   overflow-x: scroll;
 `;

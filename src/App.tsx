@@ -10,22 +10,8 @@ function App() {
     <BrowserRouter basename="pre-onboarding-7th-2-1-7">
       <Routes>
         <Route path="/" element={<Navigate replace to="/cars" />} />
-        <Route
-          path="/cars"
-          element={
-            <Layout>
-              <ListPage />
-            </Layout>
-          }
-        />
-        <Route
-          path="/cars/:id"
-          element={
-            <Layout>
-              <DetailPage />
-            </Layout>
-          }
-        />
+        <Route path="/cars" element={<ListPage />} />
+        <Route path="/cars/:id" element={<DetailPage />} />
       </Routes>
     </BrowserRouter>
   );

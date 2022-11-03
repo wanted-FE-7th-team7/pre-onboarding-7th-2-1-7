@@ -7,6 +7,7 @@ import useFetch from '../hooks/useFetch';
 import { Cars } from '../interfaces/Cars';
 import Category from '../components/UIs/Category';
 import HeaderBar from '../components/UIs/HeaderBar';
+import Layout from '../styles/Layout';
 
 function ListPage() {
   const [cars, setCars] = useState<Cars[]>([]);
@@ -22,7 +23,7 @@ function ListPage() {
   }
 
   return (
-    <>
+    <Layout>
       <HeaderBar title="전체차량" />
 
       <Category selectedType={selectedType} setSelectedType={setSelectedType} />
@@ -32,7 +33,7 @@ function ListPage() {
       {isEmpty && <NoData />}
 
       {hasCarList && <CarList cars={cars} />}
-    </>
+    </Layout>
   );
 }
 
