@@ -2,6 +2,7 @@ import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import DetailName from '../components/DetailName';
 import Error from '../components/Error';
+import MetaTag from '../components/MetaTag';
 import HeaderBar from '../components/UIs/HeaderBar';
 import Image from '../components/UIs/Image';
 import ListHeader from '../components/UIs/ListHeader';
@@ -31,6 +32,7 @@ function DetailPage() {
 
   return (
     <Layout>
+      <MetaTag car={location.state} />
       <Wrapper>
         <HeaderBar title="차량상세" />
         <Image src={imageUrl} size="DETAIL_PAGE" />
