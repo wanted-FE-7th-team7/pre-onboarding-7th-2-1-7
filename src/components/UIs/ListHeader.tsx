@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flex, theme, width } from '../styles/theme';
+import { flex, theme, width } from '../../styles/theme';
 
 interface Props {
   title: string;
@@ -23,7 +23,6 @@ export const StyledListHeader = styled.div`
   color: #ffffff;
   font-weight: 700;
   font-size: 1.7rem;
-  width: ${width.lg};
   span {
     text-align: left;
   }

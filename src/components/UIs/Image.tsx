@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flex } from '../styles/theme';
+import { flex } from '../../styles/theme';
 
 interface Props {
   src: string;
@@ -25,12 +25,12 @@ const ImgWrapper = styled.div<{ size: string }>`
 
 const imageSize: ImageType = {
   LIST_PAGE: `
-    max-width: 15.2rem;
-    max-height: 8rem;
+    width: 15.2rem;
+    height: 8rem;
   `,
   DETAIL_PAGE: `
-    max-width: 39rem;
-    max-height: 20rem;
+    width: 39rem;
+    height: 20rem;
   `,
 };
 interface ImageType {

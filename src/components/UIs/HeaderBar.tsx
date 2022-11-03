@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import { flex, theme, width } from '../styles/theme';
+import { flex, HEADER_HEIGHT, theme } from '../../styles/theme';
 import IconBack from './IconBack';
 
 interface Props {
@@ -28,11 +28,15 @@ export default HeaderBar;
 
 const StyledHeaderBar = styled.div`
   ${flex('space-between')}
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 10;
   border-bottom: 1px solid ${theme.black};
   font-weight: 700;
   font-size: 1.7rem;
-  height: 6rem;
-  width: ${width.lg};
+  height: ${HEADER_HEIGHT};
   padding: 0 2rem;
 
   div {
