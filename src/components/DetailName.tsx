@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ListItem from '../UIs/ListItem';
+import ListItem from './UIs/ListItem';
 
 interface Props {
   brand: string;
@@ -20,6 +20,7 @@ function DetailName({ brand, name, amount }: Props) {
 export default DetailName;
 
 const Wrapper = styled.div`
+  padding: 0 2rem;
   .brand {
     font-weight: 700;
     font-size: 2rem;

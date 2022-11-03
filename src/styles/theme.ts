@@ -20,3 +20,6 @@ export const width = {
   sm: '360px',
   lg: '450px',
 };
+
+export const HEADER_HEIGHT = '6rem';
+export const CATEGORY_HEIGHT = '4rem';

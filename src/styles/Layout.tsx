@@ -13,18 +13,13 @@ function Layout({ children }: PropsWithChildren) {
 export default Layout;
 
 const Wrapper = styled.div`
+  ${flex()}
   width: 100%;
-  height: 80%;
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 `;
 
 const StyledLayout = styled.div`
   ${flex('center', '', 'column')}
-  width: 45rem;
-  @media screen and (max-width: 360px) {
-    width: 35rem;
-  }
+  width: 100%;
+  height: 100%;
 `;
