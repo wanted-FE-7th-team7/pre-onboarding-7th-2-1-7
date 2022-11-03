@@ -4,20 +4,19 @@ import styled from 'styled-components';
 interface Props {
   list: string;
 }
-const Tag: React.FC<Props> = ({ list }) => {
+
+function Tag({ list }: Props) {
   return <STag className="selected-list">{list ? list : '전체'}</STag>;
-};
+}
 
 const STag = styled.div`
-  width: 3.5rem;
-  height: 1.5rem;
+  width: 5rem;
+  height: 2rem;
   border-radius: 50px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-left: 0.5rem;
 
   background-color: ${props => props.theme.gray};
   color: ${props => props.theme.black};
