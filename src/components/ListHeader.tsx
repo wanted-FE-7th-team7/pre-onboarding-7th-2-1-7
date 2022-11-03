@@ -1,28 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ListHeader() {
+interface Props {
+  text: string;
+}
+
+function ListHeader({ text }: Props) {
   return (
-    <SListHeader>
-      <div className="cost">월 비용</div>
-    </SListHeader>
+    <S.ListHeader>
+      <div className="cost">{text}</div>
+    </S.ListHeader>
   );
 }
 
-const SListHeader = styled.div`
-  display: flex;
-  align-items: center;
-  width: 30rem;
-  height: 4rem;
+const S = {
+  ListHeader: styled.div`
+    display: flex;
+    align-items: center;
+    width: 33rem;
+    height: 4rem;
 
-  background-color: ${props => props.theme.blue};
+    background-color: ${props => props.theme.blue};
 
-  .cost {
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: white;
-  }
-`;
+    .cost {
+      margin-left: 10px;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: white;
+    }
+  `,
+};
 
 export default ListHeader;
