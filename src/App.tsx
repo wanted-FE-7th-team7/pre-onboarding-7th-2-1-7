@@ -7,7 +7,7 @@ import Layout from './styles/Layout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="pre-onboarding-7th-2-1-7">
       <Routes>
         <Route path="/" element={<Navigate replace to="/cars" />} />
         <Route

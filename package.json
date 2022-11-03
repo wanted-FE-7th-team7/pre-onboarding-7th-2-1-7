@@ -1,5 +1,6 @@
 {
   "name": "team7-week1-2",
+  "homepage": "https://wanted-FE-7th-team7.github.io/pre-onboarding-7th-2-1-7",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,7 @@
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.1.3",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.2",
@@ -30,7 +32,9 @@
     "eject": "react-scripts eject",
     "postinstall": "husky install",
     "format": "prettier --cache --write .",
-    "lint": "eslint --cache ."
+    "lint": "eslint --cache .",
+    "predeploy": "npm run build",
+    "deploy": "cp build/index.html build/404.html && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
