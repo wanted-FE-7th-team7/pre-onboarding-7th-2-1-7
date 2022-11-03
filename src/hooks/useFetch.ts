@@ -2,7 +2,10 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { getCars } from '../apis/api';
 import { Cars } from '../interfaces/Cars';
 
-function useFetch(setState: Dispatch<SetStateAction<Cars[]>>) {
+function useFetch(
+  setState: Dispatch<SetStateAction<Cars[]>>,
+  selectedType: string
+) {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState(false);
 
@@ -10,8 +13,8 @@ function useFetch(setState: Dispatch<SetStateAction<Cars[]>>) {
     const handleFetch = async () => {
       setIsLoading(true);
       try {
-        const data = await getCars();
-        setState(prev => [...prev, ...data]);
+        const data = await getCars(selectedType);
+        setState([...data]);
       } catch (error) {
         setErrors(true);
       } finally {
@@ -20,7 +23,7 @@ function useFetch(setState: Dispatch<SetStateAction<Cars[]>>) {
     };
 
     handleFetch();
-  }, [setState]);
+  }, [setState, selectedType]);
 
   return [isLoading, errors];
 }
