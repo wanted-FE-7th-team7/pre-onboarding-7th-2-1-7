@@ -1,10 +1,16 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export interface
+export interface ListRequest {
+  id: number;
+  brand: string;
+  name: string;
+  segment: string;
+  fuelType: string;
+  imageUrl: string;
+}
 
-// export const ListRequest = setListData => {
-//   axios.get(`https://preonboarding.platdev.net/api/cars`).then(res => {
-//     setListData(res.data).catch(err => {});
-//   });
-// };
-export {};
+export const ListItemRequest = (setListData: any) => {
+  axios.get(`https://preonboarding.platdev.net/api/cars`).then(res => {
+    setListData(res.data.payload).catch((err: any) => {});
+  });
+};

@@ -1,19 +1,47 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
+import { ListItemRequest } from '../../apis/api';
 
 export function ListItem() {
+  const navigate = useNavigate();
+  const [listData, setListData] = useState([]);
+
+  const getList = () => ListItemRequest(setListData);
+
+  const goToDetail = (navigate: any, url: any) => {
+    navigate(url);
+  };
+
+  useEffect(() => {
+    getList();
+  }, []);
+
   return (
-    <ListItemWrap>
-      <ListTextWrap>
-        <p className="Name">brand</p>
-        <p className="CarName">name</p>
-        <p className="type">중형 / 전기</p>
-        <p className="price">월 {} 원 부터</p>
-      </ListTextWrap>
-      <ImgWrap>
-        <img />
-      </ImgWrap>
-      ;
-    </ListItemWrap>
+    <div>
+      {listData.map((list: any) => (
+        <ListItemWrap
+          onClick={() => goToDetail(navigate, `/detail/${list.id}`)}
+          key={list.id}
+        >
+          <ListTextWrap>
+            <p className="Name">{list.attribute.brand}</p>
+            <p className="CarName">{list.attribute.name}</p>
+            <p className="type">
+              {list.attribute.segment} / {list.attribute.fuelType}
+            </p>
+            <p className="price">월 {list.amount.toLocaleString()} 원 부터</p>
+          </ListTextWrap>
+          <ImgWrap>
+            <img
+              className="CarImg"
+              alt="carImg"
+              src={list.attribute.imageUrl}
+            />
+          </ImgWrap>
+        </ListItemWrap>
+      ))}
+    </div>
   );
 }
 
@@ -21,11 +49,12 @@ const ListItemWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 12rem;
   border-bottom: 1px solid black;
 `;
 const ListTextWrap = styled.div`
-  margin-right: 7rem;
+  margin: 0 7rem 0 1rem;
   .Name {
     font-weight: 700;
     font-size: 1.4rem;
@@ -50,8 +79,11 @@ const ListTextWrap = styled.div`
 `;
 
 const ImgWrap = styled.div`
-  margin-left: 7rem;
+  margin: 0 1rem 0 7rem;
   width: 15.2rem;
   height: 8rem;
   border: 1px solid black;
+  .CarImg {
+    width: 100%;
+  }
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { HeaderBar } from '../components/Ui/HeaderBar';
 import { Catagory } from '../components/Ui/Catagory';
 import { ListItem } from '../components/Ui/ListItem';
+
 export function ListPage() {
   return (
     <ListPageWrap>
@@ -26,8 +27,9 @@ const ListPageWrap = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
+
 const ListWrap = styled.div`
   width: 39rem;
   height: 100%;

@@ -1,18 +1,40 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import { colors } from '../../styles/theme';
 
+interface StyledProps {
+  isSelected: boolean;
+}
 export function Catagory() {
+  const [isSelected, SetisSelected] = useState(false);
+
   return (
     <>
-      <Tag>전체</Tag>
-      <Tag>대형</Tag>
-      <Tag>중형</Tag>
-      <Tag>소형</Tag>
+      <Tag
+        onClick={() => {
+          SetisSelected(prev => !prev);
+        }}
+        isSelected={isSelected}
+      >
+        전체
+      </Tag>
+      <Tag onClick={() => SetisSelected(prev => !prev)} isSelected={isSelected}>
+        대형
+      </Tag>
+      <Tag onClick={() => SetisSelected(prev => !prev)} isSelected={isSelected}>
+        중형
+      </Tag>
+      <Tag onClick={() => SetisSelected(prev => !prev)} isSelected={isSelected}>
+        소형
+      </Tag>
+      <Tag onClick={() => SetisSelected(prev => !prev)} isSelected={isSelected}>
+        전기
+      </Tag>
     </>
   );
 }
 
-const Tag = styled.button`
+const Tag = styled.button<StyledProps>`
   justify-content: center;
   align-items: center;
   width: 6.2rem;
@@ -21,7 +43,8 @@ const Tag = styled.button`
   margin: 0.5rem;
   border: none;
   border-radius: 6.2rem;
-  background-color: ${({ theme }) => theme.colors.gray};
-  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ isSelected }) =>
+    isSelected ? colors.black : colors.gray};
+  color: ${({ isSelected }) => (isSelected ? '#ffffff' : '#000000')};
   font-size: 1.4rem;
 `;
