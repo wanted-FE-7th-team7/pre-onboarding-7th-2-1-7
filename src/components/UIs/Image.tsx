@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styled from 'styled-components';
 import { flex } from '../../styles/theme';
 
@@ -14,7 +15,7 @@ function Image({ src, size }: Props) {
   );
 }
 
-export default Image;
+export default memo(Image);
 
 const ImgWrapper = styled.div<{ size: string }>`
   ${flex()}
@@ -26,7 +27,7 @@ const ImgWrapper = styled.div<{ size: string }>`
 const imageSize: ImageType = {
   LIST_PAGE: `
     width: 15.2rem;
-    height: 8rem;
+    height: 8.8rem;
   `,
   DETAIL_PAGE: `
     width: 39rem;

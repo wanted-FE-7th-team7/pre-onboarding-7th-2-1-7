@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { Cars } from '../interfaces/Cars';
 import { CATEGORY_HEIGHT, flex, HEADER_HEIGHT } from '../styles/theme';
+import { FUEL_TYPE, SEGMENT } from '../utils/variables';
 import Image from './UIs/Image';
 
 interface Props {
@@ -28,7 +29,7 @@ function CarList({ cars }: Props) {
                 <p className="name">{name}</p>
               </div>
               <p className="desc">
-                {segment} / {fuelType}
+                {SEGMENT[segment]} / {FUEL_TYPE[fuelType]}
               </p>
               <p className="desc">월 {amount.toLocaleString()} 원 부터</p>
             </div>

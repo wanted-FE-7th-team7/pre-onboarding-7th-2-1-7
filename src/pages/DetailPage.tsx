@@ -7,6 +7,8 @@ import Image from '../components/UIs/Image';
 import ListHeader from '../components/UIs/ListHeader';
 import ListItem from '../components/UIs/ListItem';
 import { HEADER_HEIGHT } from '../styles/theme';
+import { Time } from '../utils/time';
+import { FUEL_TYPE, SEGMENT } from '../utils/variables';
 
 interface Insurance {
   name: string;
@@ -33,16 +35,20 @@ function DetailPage() {
       <DetailName brand={brand} name={name} amount={amount} />
 
       <ListHeader title="차량 정보" />
-      <ListItem name="차종" title={segment} />
-      <ListItem name="연료" title={fuelType} />
-      <ListItem name="이용 가능일" title={startDate.toLocaleString()} />
+      <ListItem name="차종" title={SEGMENT[segment]} />
+      <ListItem name="연료" title={FUEL_TYPE[fuelType]} />
+      <ListItem name="이용 가능일" title={Time.parseStartDate(startDate)} />
       <ListHeader title="보험" />
       {insurance.map(({ name, description }: Insurance) => (
         <ListItem key={name} name={name} title={description} />
       ))}
       <ListHeader title="추가 상품" />
       {additionalProducts.map(({ name, amount }: AdditionalProducts) => (
-        <ListItem key={name} name={name} title={amount.toLocaleString()} />
+        <ListItem
+          key={name}
+          name={name}
+          title={`월 ${amount.toLocaleString()} 원`}
+        />
       ))}
     </Wrapper>
   );
