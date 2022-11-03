@@ -35,5 +35,6 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   border-bottom: 1px solid black;
   overflow-x: scroll;
+  z-index: 100;
 `;
 const CATEGORIES = ['전체', '대형', '중형', '소형', '전기'];
