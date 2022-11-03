@@ -5,14 +5,18 @@ import { useState, useEffect } from 'react';
 import { getCars } from '../apis/getCars';
 import { Car, Segment } from '../models';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function ListPage() {
   const [selectedCategory, setSelectedCategory] = useState(
     Object.keys(CATEGORY)[0]
   );
   const [carList, setCarList] = useState<Car[]>([]);
-  // Todo : hook 으로 만들기
+  const [loading, setLoading] = useState(true);
+  // Todo : hook 으로 만들기 / 리스트 계층 분리 / Suspense 사용해보기
   useEffect(() => {
+    setLoading(true);
+    setCarList([]);
     const getCarList = async () => {
       const params =
         selectedCategory === ALL
@@ -21,6 +25,7 @@ export default function ListPage() {
       const data = await getCars(params);
 
       setCarList(data);
+      setLoading(false);
     };
     getCarList();
   }, [selectedCategory]);
@@ -39,19 +44,34 @@ export default function ListPage() {
         selectedCategory={selectedCategory}
         onClick={handleCategoryClick}
       />
-      {carList?.map(car => (
-        <div key={car.id} onClick={() => handleClick(car.id, car)}>
-          <CarCard
-            createdAt={car.startDate}
-            brand={car.attribute.brand}
-            name={car.attribute.name}
-            segment={CATEGORY[car.attribute.segment]}
-            fuelType={car.attribute.fuelType}
-            amount={car.amount}
-            imageSrc={car.attribute.imageUrl}
-          />
-        </div>
-      ))}
+      {carList.length ? (
+        carList.map(car => (
+          <div key={car.id} onClick={() => handleClick(car.id, car)}>
+            <CarCard
+              createdAt={car.startDate}
+              brand={car.attribute.brand}
+              name={car.attribute.name}
+              segment={CATEGORY[car.attribute.segment]}
+              fuelType={car.attribute.fuelType}
+              amount={car.amount}
+              imageSrc={car.attribute.imageUrl}
+            />
+          </div>
+        ))
+      ) : (
+        <S.Message>{loading ? '불러오는 중' : '차량이 없습니다'}</S.Message>
+      )}
     </>
   );
 }
+
+const S = {
+  Message: styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+  `,
+};
