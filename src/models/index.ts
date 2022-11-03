@@ -1,4 +1,4 @@
-export type FuelType = 'gasoline' | 'hybrid' | 'ev';
+export type Fuel = 'gasoline' | 'hybrid' | 'ev';
 export type Segment = 'C' | 'D' | 'E' | 'SUV';
 
 interface AdditionalProduct {
@@ -18,8 +18,8 @@ export interface Car {
     createAt: Date;
     brand: string;
     name: string;
-    segment: string;
-    fuelType: FuelType;
+    segment: Segment;
+    fuelType: Fuel;
     imageUrl: string;
   };
   amount: number;
@@ -27,11 +27,21 @@ export interface Car {
   additionalProducts: AdditionalProduct[];
 }
 
-export interface CategoryType {
+export interface SegmentText {
   [index: string]: string;
-  ALL: string;
   C: string;
   D: string;
   E: string;
   SUV: string;
+}
+
+export interface FuelText {
+  [index: string]: string;
+  gasoline: string;
+  hybrid: string;
+  ev: string;
+}
+
+export interface CategoryType extends SegmentText {
+  ALL: string;
 }

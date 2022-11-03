@@ -1,4 +1,4 @@
-import { CategoryType } from '../models';
+import { CategoryType, FuelText, SegmentText } from '../models';
 
 const FUEL_GASOLINE = 'gasoline';
 const FUEL_HYBRID = 'hybrid';
@@ -18,8 +18,15 @@ export const CATEGORY: CategoryType = {
   SUV: 'SUV',
 };
 
-export const FUEL = {
+export const FUEL_TEXT: FuelText = {
   gasoline: '가솔린',
   hybrid: '하이브리드',
   ev: '전기',
+};
+
+export const SEGMENT_TEXT: SegmentText = {
+  C: '소형',
+  D: '중형',
+  E: '대형',
+  SUV: 'SUV',
 };

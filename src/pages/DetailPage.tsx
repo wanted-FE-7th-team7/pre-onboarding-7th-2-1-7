@@ -2,22 +2,22 @@ import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import ListHeader from '../components/UI/ListHeader';
 import ListItem from '../components/UI/ListItem';
+import { FUEL_TEXT, SEGMENT_TEXT } from '../constants';
 import { Car } from '../models';
 import { formatStartDate, formatWonPerMonth } from '../utils/format';
 
-const TEXT_CAR_INFO = '차량 정보';
-const TEXT_CAR_INSURANCE = '보험';
-const TEXT_CAR_ADDITIONAL_PRODUCT = '추가 상품';
-const TEXT_SEGMENT = '차종';
-const TEXT_FUEL = '연료';
-const TEXT_START_DATE = '이용 가능일';
+const TITLE_CAR_INFO = '차량 정보';
+const TITLE_CAR_INSURANCE = '보험';
+const TITLE_CAR_ADDITIONAL_PRODUCT = '추가 상품';
+const NAME_SEGMENT = '차종';
+const NAME_FUEL = '연료';
+const NAME_START_DATE = '이용 가능일';
 
 export default function DetailPage() {
   const { state: car } = useLocation();
   console.log(car);
   const { amount, attribute, additionalProducts, insurance, startDate }: Car =
     car;
-  console.log(startDate, new Date(startDate));
   return (
     <S.Wrapper>
       <S.Image src={attribute.imageUrl} alt="detail" />
@@ -26,18 +26,21 @@ export default function DetailPage() {
         <S.NameText>{attribute.name}</S.NameText>
         <ListItem name="" description={formatWonPerMonth(amount)} />
       </S.Main>
-      <ListHeader text={TEXT_CAR_INFO} />
-      <ListItem name={TEXT_SEGMENT} description="무한" />
-      <ListItem name={TEXT_FUEL} description="무한" />
+      <ListHeader text={TITLE_CAR_INFO} />
       <ListItem
-        name={TEXT_START_DATE}
+        name={NAME_SEGMENT}
+        description={SEGMENT_TEXT[attribute.segment]}
+      />
+      <ListItem name={NAME_FUEL} description={FUEL_TEXT[attribute.fuelType]} />
+      <ListItem
+        name={NAME_START_DATE}
         description={formatStartDate(new Date(startDate))}
       />
-      <ListHeader text={TEXT_CAR_INSURANCE} />
+      <ListHeader text={TITLE_CAR_INSURANCE} />
       {insurance?.map(({ name, description }, idx) => (
         <ListItem key={idx} name={name} description={description} />
       ))}
-      <ListHeader text={TEXT_CAR_ADDITIONAL_PRODUCT} />
+      <ListHeader text={TITLE_CAR_ADDITIONAL_PRODUCT} />
       {additionalProducts?.map(({ name, amount }, idx) => (
         <ListItem
           key={idx}

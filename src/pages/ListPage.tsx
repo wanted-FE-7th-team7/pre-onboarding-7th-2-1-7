@@ -51,7 +51,7 @@ export default function ListPage() {
               createdAt={car.startDate}
               brand={car.attribute.brand}
               name={car.attribute.name}
-              segment={CATEGORY[car.attribute.segment]}
+              segment={car.attribute.segment}
               fuelType={car.attribute.fuelType}
               amount={car.amount}
               imageSrc={car.attribute.imageUrl}

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { isNewCar } from '../../utils/validation';
 import { formatToWon } from '../../utils/format';
+import { FUEL_TEXT, SEGMENT_TEXT } from '../../constants';
 
 interface Props {
   createdAt: Date;
@@ -31,7 +32,8 @@ export default function CarCard({
             {name}
           </S.InfoBold>
           <S.InfoPlain>
-            {segment} / {fuelType} <br />월 {formatToWon(amount)}원 부터
+            {SEGMENT_TEXT[segment]} / {FUEL_TEXT[fuelType]} <br />월{' '}
+            {formatToWon(amount)}원 부터
           </S.InfoPlain>
         </S.Info>
         <S.Img src={imageSrc} alt="image" />
