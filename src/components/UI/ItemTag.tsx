@@ -2,20 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 function ItemTag() {
-  return <SItemTag>신규</SItemTag>;
+  return <S.ItemTag>신규</S.ItemTag>;
 }
 
-const SItemTag = styled.div`
-  width: 3.5rem;
-  height: 1.5rem;
-  border-radius: 50px;
+const S = {
+  ItemTag: styled.div`
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 50px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  background-color: ${props => props.theme.blue};
-  color: white;
-`;
+    background-color: ${props => props.theme.blue};
+    color: white;
+  `,
+};
 
 export default ItemTag;
