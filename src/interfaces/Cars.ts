@@ -11,8 +11,8 @@ export interface Cars {
 export interface CarAttribute {
   brand: string;
   name: string;
-  segment: string; // ENUMC: 소형, D: 중형, E: 대형, SUV: SUV
-  fuelType: string; // ENUMgasoline: 가솔린, ev: 전기, hybrid: 하이브리드
+  segment: string;
+  fuelType: string;
   imageUrl: string;
 }
 
