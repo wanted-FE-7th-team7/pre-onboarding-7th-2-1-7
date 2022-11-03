@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flex, theme, width } from '../../styles/theme';
+import { flex, theme } from '../../styles/theme';
 
 interface Props {
   title: string;

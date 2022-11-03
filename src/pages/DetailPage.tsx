@@ -19,7 +19,6 @@ interface AdditionalProducts {
 
 function DetailPage() {
   const location = useLocation();
-
   if (!location.state) {
     return <Error />;
   }

@@ -7,9 +7,6 @@ const GlobalStyle = createGlobalStyle`${reset}
   }
   html {
     font-size:10px;
-    /* @media screen and (max-width: 400px) {
-      font-size: 8px;
-    } */
   }
   
 `;
