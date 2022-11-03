@@ -4,26 +4,28 @@ import IconBack from './UI/IconBack';
 
 function HearderBar() {
   return (
-    <SHeaderBar>
+    <S.HeaderBar>
       <div className="header-layout">
-        <IconBack />
-        <div>전체차량</div>
+        {/* <IconBack /> */}
+        <h3>전체차량</h3>
         <div className="none" />
       </div>
-    </SHeaderBar>
+    </S.HeaderBar>
   );
 }
 
-const SHeaderBar = styled.div`
-  .header-layout {
-    width: 30rem;
-    height: 5rem;
+const S = {
+  HeaderBar: styled.div`
+    .header-layout {
+      width: 33rem;
+      height: 5rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: solid 1px black;
-  }
-`;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: solid 2px black;
+    }
+  `,
+};
 
 export default HearderBar;

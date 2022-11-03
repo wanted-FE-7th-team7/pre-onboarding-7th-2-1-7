@@ -1,25 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ListItem() {
+interface Props {
+  name: string;
+  description: string;
+}
+
+function ListItem({ name, description }: Props) {
   return (
-    <SListItem>
-      <div className="cost">월 600,000원</div>
-    </SListItem>
+    <S.ListItem>
+      <div className="bold">{name}</div>
+      <div className="cost">{description}</div>
+    </S.ListItem>
   );
 }
 
-const SListItem = styled.div`
-  display: flex;
-  align-items: center;
-  width: 30rem;
-  height: 4rem;
+const S = {
+  ListItem: styled.div`
+    display: flex;
+    align-items: center;
+    width: 33rem;
+    height: 4rem;
 
-  .cost {
-    margin-right: 1.5rem;
-    margin-left: auto;
-    font-weight: 350;
-    font-size: 1.5rem;
-  }
-`;
+    .bold {
+      margin-left: 0.5rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .cost {
+      margin-right: 1.5rem;
+      margin-left: auto;
+      font-size: 1.5rem;
+    }
+  `,
+};
 export default ListItem;

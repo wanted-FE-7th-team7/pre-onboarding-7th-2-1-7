@@ -6,20 +6,24 @@ const carList = ['전체', '대형', '중형', '소형', '전기'];
 
 function Category() {
   return (
-    <SCategory>
+    <S.Category>
       {carList.map(list => (
         <Tag key={list} list={list} />
       ))}
-    </SCategory>
+    </S.Category>
   );
 }
 
-const SCategory = styled.div`
-  width: 30rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  border-bottom: solid 1px black;
-`;
+const S = {
+  Category: styled.div`
+    width: 33rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow-x: scroll;
+    border-bottom: 1px solid black;
+  `,
+};
 
 export default Category;
