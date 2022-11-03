@@ -15,7 +15,7 @@ function Category({ selectedType, setSelectedType }: Props) {
         <Tag
           key={category}
           onClick={() => setSelectedType(category)}
-          isSelected={selectedType === category}
+          color={selectedType === category ? 'black' : 'gray'}
           placeholder={category}
         />
       ))}

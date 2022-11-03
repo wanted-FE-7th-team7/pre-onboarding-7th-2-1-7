@@ -3,7 +3,6 @@ import { Navigate } from 'react-router-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
 import ListPage from './pages/ListPage';
-import Layout from './styles/Layout';
 
 function App() {
   return (
